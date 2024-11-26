@@ -12,6 +12,11 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        body.loaded {
+            opacity: 1;
         }
         .hero {
             background: linear-gradient(to right, #4facfe, #00f2fe);
@@ -39,10 +44,17 @@
             position: relative;
             overflow: hidden;
             padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .pricing-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .pricing-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .card-title {
             font-size: 1.5rem;
@@ -103,7 +115,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="document.body.classList.add('loaded');">
 
     <header class="hero">
         <div class="container">
@@ -506,5 +518,15 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.pricing-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('visible'); // Tambahkan kelas visible setelah delay
+                }, index * 300); // Delay bertahap untuk setiap kartu
+            });
+        });
+    </script>
 </body>
 </html>
