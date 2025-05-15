@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Sumdimsum</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Sumdimsum</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="gallery.html">Galeri</a></li>
+                <li><a href="order.html">Pesan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container gallery-section">
+        <h1>Galeri Produk</h1>
+        <p class="gallery-description">Lihat koleksi foto-foto dimsum mentai lezat kami. Klik gambar untuk melihat lebih besar.</p>
+        
+        <div class="photo-gallery">
+            <div class="photo-item">
+                <a href="images/1.jpg" class="lightbox">
+                    <img src="images/1.jpg" alt="Dimsum Mentai">
+                </a>
+            </div>
+            <div class="photo-item">
+                <a href="images/2.jpg" class="lightbox">
+                    <img src="images/2.jpg" alt="Dimsum Mentai Special">
+                </a>
+            </div>
+            <div class="photo-item">
+                <a href="images/3.jpg" class="lightbox">
+                    <img src="images/3.jpg" alt="Proses Pembuatan Dimsum">
+                </a>
+            </div>
+            <div class="photo-item">
+                <a href="images/4.jpg" class="lightbox">
+                    <img src="images/4.jpg" alt="Dimsum Mentai Platter">
+                </a>
+            </div>
+            <div class="photo-item">
+                <a href="images/5.jpg" class="lightbox">
+                    <img src="images/5.jpg" alt="Dimsum Ayam Mentai Close-up">
+                </a>
+            </div>
+            <div class="photo-item">
+                <a href="images/6.jpg" class="lightbox">
+                    <img src="images/6.jpg" alt="Saus Mentai Special">
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox-container" class="lightbox-container">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Sumdimsum. All rights reserved.</p>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html> 

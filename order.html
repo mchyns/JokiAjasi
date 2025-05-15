@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan - Sumdimsum</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Sumdimsum</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="gallery.html">Galeri</a></li>
+                <li><a href="order.html">Pesan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Formulir Customer -->
+    <div id="customer-form-modal" class="modal">
+        <div class="modal-content checkout-form">
+            <span class="close" id="close-form">&times;</span>
+            <h2>Formulir Pemesanan</h2>
+            <p class="checkout-info">Total Pesanan: Rp <span id="total-pesanan">0</span></p>
+            
+            <form id="customer-form">
+                <div class="form-group">
+                    <label for="checkout-nama">Nama Lengkap:</label>
+                    <input type="text" id="checkout-nama" name="nama" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="checkout-telepon">No. Telepon:</label>
+                    <input type="tel" id="checkout-telepon" name="telepon" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="checkout-alamat">Alamat Pengiriman:</label>
+                    <textarea id="checkout-alamat" name="alamat" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="checkout-tanggal">Tanggal Pengambilan:</label>
+                    <input type="date" id="checkout-tanggal" name="tanggal" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" id="back-to-menu" class="back-btn">Kembali</button>
+                    <button type="submit" class="submit-btn">Proses Pesanan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <main class="container order-section">
+        <h1>Menu Pesanan</h1>
+        
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="images/1.jpg" alt="Dimsum Ayam Mentai">
+                <div class="menu-details">
+                    <h3>Dimsum Ayam Mentai</h3>
+                    <p class="price">Rp 25.000/porsi</p>
+                    <div class="quantity-control" data-id="1" data-name="Dimsum Ayam Mentai" data-price="25000">
+                        <button class="qty-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="qty-amount">0</span>
+                        <button class="qty-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/2.jpg" alt="Dimsum Udang Mentai">
+                <div class="menu-details">
+                    <h3>Dimsum Udang Mentai</h3>
+                    <p class="price">Rp 30.000/porsi</p>
+                    <div class="quantity-control" data-id="2" data-name="Dimsum Udang Mentai" data-price="30000">
+                        <button class="qty-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="qty-amount">0</span>
+                        <button class="qty-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/3.jpg" alt="Dimsum Mix Mentai">
+                <div class="menu-details">
+                    <h3>Dimsum Mix Mentai</h3>
+                    <p class="price">Rp 35.000/porsi</p>
+                    <div class="quantity-control" data-id="3" data-name="Dimsum Mix Mentai" data-price="35000">
+                        <button class="qty-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="qty-amount">0</span>
+                        <button class="qty-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="order-bottom-summary">
+            <div class="total-section">
+                <p>Total Pesanan: <span id="order-total">Rp 0</span></p>
+            </div>
+            <button id="order-button" class="order-btn-bottom" disabled>Pesan Sekarang</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sumdimsum. All rights reserved.</p>
+    </footer>
+
+    <script src="js/menu.js"></script>
+</body>
+</html> 
